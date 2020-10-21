@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <script src="https://kit.fontawesome.com/1059b1d5ec.js" crossorigin="anonymous"></script>
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet">
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -21,35 +25,39 @@
             </a>
 
             
-
-            <ul>
-                <li><a href="" class="active">Hébergements</a></li>
-                <li><a href="">Activité</a></li>
-                <li><a href="">S'inscrire</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="" class="active">Hébergements</a></li>
+                    <li><a href="">Activité</a></li>
+                    <li><a href="" class="bouton-inscription">S'inscrire</a></li>
+                </ul>
+            </nav>
         </header>
 
 
         <!-- Section recherche -->
 
 
-        <section class="recherche">
+        <section class="recherche wrapper">
 
             <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
             <span>En plein centre ville ou en pleine nature</span>
 
             <section class="barre-de-recherche">
-                <i>qsd</i>
+                <i class="fas fa-map-marker-alt"></i>
                 <input placeholder="Marseille, France" type="text" name="" id="">
-                <button>Rechercher</button>
+                <button class="rechercher-icone"><i class="fas fa-search"></i></button>
+                <button class="rechercher-texte">Rechercher</button>
             </section>
 
             <section class="filtres">
                 <span>Filtres</span>
-                <button>Economique</button>
-                <button>Familial</button>
-                <button>Romantique</button>
-                <button>Animaux autorisés</button>
+                <button><i class="fas fa-money-bill-wave"></i>Economique</button>
+                <button><i class="fas fa-child"></i>Familial</button>
+                <button><i class="fas fa-heart"></i>
+
+                    Romantique</button>
+                <button><i class="fas fa-dog"></i>Animaux autorisés</button>
             </section>
 
         </section>
