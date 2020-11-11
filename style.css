@@ -324,25 +324,61 @@ header{
 
 /* .section-activites */
 
-@media(min-width:1100px){.section-activites article{display: flex;}}
+@media(min-width:1200px){.section-activites article{display: flex;}}
 
-@media(min-width:1100px){.activites-par-3{ display: flex;}}
+@media(min-width:1200px){.section-activites article .activites-par-3{ display: flex;}}
+
+    
+    /* Touche les ul de la section activités. Ils regroupent les éléments de liste (li) correspondant chacun à une activité à faire à Marseille. Ces éléments sont rangés par groupe de 3  */
 
     .section-activites article .activites-par-3{margin: 0 1rem;}
+    
     @media(min-width:1300px){.section-activites article .activites-par-3{margin: 0;}}
 
+        
+        /* Touche les li de la section activités */
+
         .section-activites article .activites-par-3 .activite-item{box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); border-radius: 20px; margin: 0 15px; margin-bottom: 2rem;}
-        .section-activites article .activites-par-3 .activite-item-1{margin-left: 0;}
-    
-            .section-activites article .activites-par-3 .activite-item h4{margin-left: 2rem;}
+        .section-activites article .activites-par-3 .activite-item.remove-margin-left{margin-left: 0;}
+        .section-activites article .activites-par-3 .activite-item.remove-margin-right{margin-right: 0;}
+
+        @media(max-width:1200px){.section-activites article .activites-par-3 .activite-item{width: 750px; margin: auto !important;}}
+        @media(max-width:800px){.section-activites article .activites-par-3 .activite-item{width: 500px; margin: auto !important;}}
+        @media(max-width:600px){.section-activites article .activites-par-3 .activite-item{width: 100%; margin: auto !important;}}
+
+
+
+            /* Touche les images des li de la section activités */
 
             .section-activites article .activites-par-3 .activite-item img{width: 100%; max-height: 200px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;}
 
             @media(min-width:650px){.section-activites article .activites-par-3 .activite-item img{max-height: 300px;}}
-            @media(min-width:1100px){.section-activites article .activites-par-3 .activite-item img{max-height: 150px;}}
+            @media(min-width:1200px){.section-activites article .activites-par-3 .activite-item img{max-height: 160px;}}
 
-            @media(min-width:1100px){.section-activites article .activites-par-3 .activite-item-1 img{max-height: 350px; height: 350px; width: 500px;}}
+            @media(min-width:1200px){.section-activites article .activites-par-3 .activite-item.activite-item-1 img{max-height: 400px; height: 400px; width: 500px; object-fit: cover;}}
         
+            
+        
+            /* Touche les titre des li de la section activités */
+    
+            /* .section-activites article .activites-par-3 .activite-item .activite-infos{background-color: #0065FC;} */
+            .section-activites article .activites-par-3 .activite-item .activite-infos h4{margin-left: 2rem;}
+            .section-activites article .activites-par-3 .activite-item-1 h4{padding-bottom: 0 !important;}
+
+
+
+
+            /* Atelier débuggage */
+
+
+            /* .section-activites article .activites-par-3 .activite-item{background-color: red;}
+            .section-activites article .activites-par-3 .activite-item .activite-infos{background-color: #0065FC; height: 20px;}
+            .section-activites article .activites-par-3 .activite-item .activite-infos h4{background-color: green;} */
+
+
+
+            
+            
             
 
         
