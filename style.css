@@ -348,6 +348,13 @@ header{
 
 
 
+        /* Touche les li regroupés par 2 */
+
+        @media(min-width:1200px){.section-activites article .activites-par-3 .regroupement-par-2{display: flex; flex-direction: column;}}
+        
+
+
+
             /* Touche les images des li de la section activités */
 
             .section-activites article .activites-par-3 .activite-item img{width: 100%; max-height: 200px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;}
