@@ -74,22 +74,23 @@ i{
 /* Section header */
 
 header{
-    background-color: #FFF;
-    padding: 1rem;
+    /* padding: 1rem; */
     position: relative;
 }
 
-@media(min-width:800px){
+/* @media(min-width:800px){
     header{padding: 3.2rem;}
+} */
+
+header .wrapper .header-logo{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-    header .header-logo{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 
-    header nav ul{
+
+header .wrapper nav ul{
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -97,36 +98,55 @@ header{
         margin: 0;
     }
 
-        header nav ul li{
-            margin: 0 2rem;
-        }
-        
-            header ul li a {
-                padding: 3rem;
-            }
-
+    header .wrapper nav ul li{
+        margin: 0 2rem;
+    }
+    
+    header .wrapper nav ul li a {
+        padding: 3rem;
+    }
+    
                 .bouton-inscription{
                     color: #0065FC;
                     font-weight: 600;
                 }
-
-                header ul li a.active{
+                
+                header .wrapper ul li a.active{
                     color: #0065FC;
                     border-top: 3px solid #0065FC;
                 }
+                
+                
+@media(max-width:970px){
 
+    header .wrapper{width: 100%; margin: 0;}
 
+    header .wrapper nav ul{display: flex; flex-wrap: wrap; width: 100%; height: 100px;}
 
+    header .wrapper nav ul li{height: 30px;}
 
-/* Section recherche  */
+    header .wrapper nav ul li:nth-of-type(1) {
+        order: 2; width: 50%; background-color: aquamarine; text-align: center;
+    }
 
+    header .wrapper nav ul li:nth-of-type(2) {
+        order: 3; width: 50%; text-align: center;
+    }
+
+    header .wrapper nav ul li:nth-of-type(3){order: 1; width: 100%; text-align: end; background-color: bisque;}
+}
+                
+                
+                /* Section recherche  */
+                
 
 .recherche-section{
     padding: 1rem;
 }
 
-    .recherche-section em{font-style: normal; display: block; margin: 1rem 0;}
     .recherche-section i{padding: 0.65rem;}
+    .recherche-section .fa-info{color: #0065FC; padding: 0.3rem 0.1rem; border: 1px solid #cecece; border-radius: 100%;}
+    .recherche-section em{font-style: normal; margin: 1rem 0;}
 
     .rechercher-icone
 
@@ -175,6 +195,7 @@ header{
 
     .filtres{
         margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 
 
@@ -219,6 +240,8 @@ header{
 
     .hebergement-section article{background-color: #F2F2F2; padding: 1rem;}
     .hebergement-section h4{margin: 0;}
+    .hebergement-section .fa-star{color: #cecece;}
+    .hebergement-section .fa-star.bleu{color: #0065FC;}
     
 
     @media(min-width:1100px){
@@ -349,6 +372,7 @@ header{
 
 
         /* Touche les li regroupés par 2 */
+
 
         @media(min-width:1200px){.section-activites article .activites-par-3 .regroupement-par-2{display: flex; flex-direction: column;}}
         
