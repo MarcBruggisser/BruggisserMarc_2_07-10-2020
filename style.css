@@ -34,6 +34,8 @@ h1 span{
     display: none;
 }
 
+h3{margin: 1rem 2rem 1rem;}
+
 a{
     text-decoration: none;
 }
@@ -74,67 +76,99 @@ i{
 /* Section header */
 
 header{
-    /* padding: 1rem; */
     position: relative;
 }
 
-/* @media(min-width:800px){
-    header{padding: 3.2rem;}
-} */
-
-header .wrapper .header-logo{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+@media(min-width:700px){
+    header{padding: 2rem 2rem 0rem 1rem;}
 }
 
 
 
-header .wrapper nav ul{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 100%;
-        margin: 0;
-    }
+    header .wrapper{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; position: relative;}
 
-    header .wrapper nav ul li{
-        margin: 0 2rem;
-    }
+
+        header .wrapper .header-logo{
+            position: absolute;
+            top: 30px; left: 20px;
+            transform: translateY(-10px);
+        }
+
+        @media(min-width:700px){
+
+            header .wrapper .header-logo{
+                position: static; transform: translateY(0);
+            }
+
+        }
+
+
+
+
+        header .wrapper nav{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+            header .wrapper nav a:nth-of-type(1){order: 2;}
+            header .wrapper nav a:nth-of-type(2){order: 3;}
+
+            .bouton-inscription{
+                color: #0065FC;
+                font-weight: 600;
+                order: 1;
+                width: 100%;
+                text-align: end;
+                height: 60px;
+                margin-top: 36px; margin-right: 20px;
+            }
+            
+            header .wrapper nav a:nth-of-type(1), header .wrapper nav a:nth-of-type(2){width: 50%; text-align: center;}
+
+
+@media(min-width:700px){
+
+    header .wrapper{flex-wrap: nowrap;}
     
-    header .wrapper nav ul li a {
-        padding: 3rem;
-    }
-    
-                .bouton-inscription{
-                    color: #0065FC;
-                    font-weight: 600;
-                }
-                
-                header .wrapper ul li a.active{
-                    color: #0065FC;
-                    border-top: 3px solid #0065FC;
-                }
-                
-                
-@media(max-width:970px){
+        header .wrapper nav{width: 80%; flex-wrap: nowrap; justify-content: flex-end;}
+            
+            header .wrapper nav a{margin: 0 2rem;}
 
-    header .wrapper{width: 100%; margin: 0;}
+            header .wrapper nav a:nth-of-type(1){order: 1;}
+            header .wrapper nav a:nth-of-type(2){order: 2;}
+            .bouton-inscription{order: 3; height: initial; margin: initial;}
 
-    header .wrapper nav ul{display: flex; flex-wrap: wrap; width: 100%; height: 100px;}
+            header .wrapper nav a:nth-of-type(1), header .wrapper nav a:nth-of-type(2), .bouton-inscription{width: initial;}
 
-    header .wrapper nav ul li{height: 30px;}
 
-    header .wrapper nav ul li:nth-of-type(1) {
-        order: 2; width: 50%; background-color: aquamarine; text-align: center;
-    }
-
-    header .wrapper nav ul li:nth-of-type(2) {
-        order: 3; width: 50%; text-align: center;
-    }
-
-    header .wrapper nav ul li:nth-of-type(3){order: 1; width: 100%; text-align: end; background-color: bisque;}
 }
+    
+              
+                
+                header .wrapper nav a.active{
+                    color: #0065FC;
+                    border-bottom: 3px solid #0065FC;
+                    padding-bottom: 12px;
+                }
+
+                @media(min-width:700px){
+
+                    header .wrapper nav a.active{
+                        border-bottom: initial;
+                        padding-bottom: initial;
+                        position: relative;
+                    }
+
+                        header .wrapper nav a.active::before{display: block; width: 100%; height: 5px; background-color: #0065FC; content: ""; position: absolute; bottom: 64px;}
+
+                }
+                
+                
+
                 
                 
 /* Section recherche  */
@@ -215,7 +249,7 @@ header .wrapper nav ul{
             border-radius: 50px;
             padding: 0 2rem 0 0;
             border: 1px solid #F2F2F2;
-            margin: 0 1rem;
+            margin: 7px 1rem;
             border: 1px solid #F2F2F2;
         }
 
@@ -266,8 +300,14 @@ header .wrapper nav ul{
 
     
     .hebergement-liste{display: flex; flex-wrap: wrap; justify-content: space-around;}
+    .hebergement-item .hebergement-infos .notation{display: flex; margin-bottom: 10px;}
 
-    .hebergement-tous h3, .hebergement-populaire em{margin: 1rem 2rem 0;   }
+    .hebergement-tous h3, .hebergement-populaire em{margin: 1rem 2rem 0;  }
+    @media(max-width:1309px){
+        
+        .hebergement-populaire em{padding-top: 1rem;}
+
+    }
 
         .hebergement-liste .hebergement-item{background-color: #FFF; margin: 1rem 20px; padding: 0.25rem; border-radius: 20px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);}
             
@@ -330,10 +370,9 @@ header .wrapper nav ul{
 
     .hebergement-populaire {position: relative;}
 
-    @media(min-width:1310px){
-        .hebergement-populaire{width: 384px; order: 2;}
-    }
+    
 
+    @media(min-width:1310px){.hebergement-populaire{width: 384px; order: 2;}}
     @media(max-width:1309px){.hebergement-populaire{margin-bottom: 2rem;}}
 
 
@@ -342,13 +381,35 @@ header .wrapper nav ul{
     .hebergement-populaire .graphique-icone{position: absolute; top: 23px; right: 20px; }
 
 
+    /* Gestion du composant et du comportement de tous ses éléments selon la taille d'écran dans laquelle on se trouve */
+
+
     .hebergement-populaire .hebergement-item{display: flex; width: 320px;}
-
-    @media(min-width:1310px) {.hebergement-populaire .hebergement-item{ margin-bottom: 1.6rem; }}
-
     .hebergement-populaire .hebergement-item img{width: 120px; height: 130px; object-fit: cover; display: block; border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+    .hebergement-populaire .hebergement-item .hebergement-infos p{margin: 8px 0 25px;}
 
-    /* @media(min-width:1310px){.hebergement-populaire .hebergement-item img{width: 40%;} } */
+    @media(min-width: 650px){
+    
+        .hebergement-populaire .hebergement-item{width: 550px;}
+        .hebergement-populaire .hebergement-item img{width: 160px; height: 160px;}
+        .hebergement-populaire .hebergement-item .hebergement-infos{padding: 1.8rem 3rem 0;}
+        .hebergement-populaire .hebergement-item .hebergement-infos p{margin: 16px 0 45px;}
+        
+    }
+
+
+
+    @media(min-width: 850px){.hebergement-populaire .hebergement-item{width: 750px;}}
+
+    @media(min-width:1310px) {
+    
+        .hebergement-populaire .hebergement-item{ margin-bottom: 1.6rem; width: 320px; }
+        .hebergement-populaire .hebergement-item img{width: 120px; height: 130px;}
+        .hebergement-populaire .hebergement-item .hebergement-infos{padding: 0.8rem 1rem 0;}
+        .hebergement-populaire .hebergement-item .hebergement-infos p{margin: 8px 0 25px;}
+    }
+
+
         
         
         
@@ -366,54 +427,67 @@ header .wrapper nav ul{
 
 /* .section-activites */
 
-@media(min-width:1200px){.section-activites article{display: flex;}}
+.section-activites article h4{margin: 0; padding: 1rem;}
 
-@media(min-width:1200px){.section-activites article .activites-par-3{ display: flex;}}
+@media(min-width:1310px){.section-activites article{display: flex;}}
+
+@media(min-width:1100px){.section-activites article .activites-par-3{ display: flex; justify-content: center;}}
 
     
     /* Touche les ul de la section activités. Ils regroupent les éléments de liste (li) correspondant chacun à une activité à faire à Marseille. Ces éléments sont rangés par groupe de 3  */
 
-    .section-activites article .activites-par-3{margin: 0 1rem;}
+    .section-activites article .activites-par-3{margin: 2rem 1rem;}
     
     @media(min-width:1300px){.section-activites article .activites-par-3{margin: 0;}}
 
         
         /* Touche les li de la section activités */
 
-        .section-activites article .activites-par-3 .activite-item{box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); border-radius: 20px; margin: 0 15px; margin-bottom: 2rem;}
-        .section-activites article .activites-par-3 .activite-item.remove-margin-left{margin-left: 0;}
-        .section-activites article .activites-par-3 .activite-item.remove-margin-right{margin-right: 0;}
+        .section-activites article .activites-par-3 .activite-item{box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); width: 320px; margin: 2rem auto !important; border-radius: 20px; margin: 0 15px; margin-bottom: 2rem;}
+        
+        @media(min-width:800px){.section-activites article .activites-par-3 .activite-item{width: 500px;}}
+        @media(min-width:1100px){.section-activites article .activites-par-3 .activite-item{width: 450px; margin: 25px 15px !important;}}
+        @media(min-width:1310px){.section-activites article .activites-par-3 .activite-item{width: 280px; margin: 20px 26.5px !important;}
+    
+            .section-activites article .activites-par-3 .activite-item.remove-margin-left{margin-left: 0 !important;}
+            .section-activites article .activites-par-3 .activite-item.remove-margin-right{margin-right: 0 !important;}
+    
+        }
+        
 
-        @media(max-width:1200px){.section-activites article .activites-par-3 .activite-item{width: 750px; margin: auto !important;}}
-        @media(max-width:800px){.section-activites article .activites-par-3 .activite-item{width: 500px;}}
-        @media(max-width:600px){.section-activites article .activites-par-3 .activite-item{width: 320px;}}
 
 
 
         /* Touche les li regroupés par 2 */
 
 
-        @media(min-width:1200px){.section-activites article .activites-par-3 .regroupement-par-2{display: flex; flex-direction: column;}}
+        @media(min-width:1310px){.section-activites article .activites-par-3 .regroupement-par-2{display: flex; flex-direction: column;}}
         
 
 
 
             /* Touche les images des li de la section activités */
 
-            .section-activites article .activites-par-3 .activite-item img{width: 100%; max-height: 200px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;}
+            .section-activites article .activites-par-3 .activite-item img{width: 100%; height: 200px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;}
 
-            @media(min-width:800px){.section-activites article .activites-par-3 .activite-item img{max-height: 300px;}}
-            @media(min-width:1200px){.section-activites article .activites-par-3 .activite-item img{max-height: 160px;}}
+            @media(min-width:800px){
+                .section-activites article .activites-par-3 .activite-item img{height: 250px;}
+            }
+            @media(min-width:1100px){
+                .section-activites article .activites-par-3 .activite-item img{height: 250px;}
+                .section-activites article .activites-par-3 .activite-item-1 img{height:580px;}
+            }
+            @media(min-width:1310px){
+                .section-activites article .activites-par-3 .activite-item img{height: 160px;}
+                .section-activites article .activites-par-3 .activite-item.activite-item-1 img{height: 415px;}
+            }
 
-            @media(min-width:1200px){.section-activites article .activites-par-3 .activite-item.activite-item-1 img{max-height: 400px; height: 400px; width: 500px; object-fit: cover;}}
         
             
         
             /* Touche les titre des li de la section activités */
     
-            /* .section-activites article .activites-par-3 .activite-item .activite-infos{background-color: #0065FC;} */
-            .section-activites article .activites-par-3 .activite-item .activite-infos h4{margin-left: 2rem;}
-            .section-activites article .activites-par-3 .activite-item-1 h4{padding-bottom: 0 !important;}
+            .section-activites article .activites-par-3 .activite-item .activite-infos h4{margin-left: 1rem;}
 
 
 
